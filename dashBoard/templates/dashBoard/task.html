@@ -1,0 +1,18 @@
+{% extends 'dashBoard/base.html' %}
+<!DOCTYPE html>
+{% block title %}
+    {{task.id}}
+{% endblock %}
+{% block content %}
+    <h1>title</h1>
+    <p>{{task.title}}</p>
+    <h2>description</h2>
+    <p>{{task.description}}</p>
+    <h2>startDate</h2>
+    <p>{{task.startDate}}</p>
+    <h2>endDate</h2>
+    <p>{{task.endDate}}</p>
+    <h2>status</h2>
+    <p>{{task.status}}</p>
+    <h2><a href="{% url 'home' %}">dashBoard</a></h2>
+{% endblock %}

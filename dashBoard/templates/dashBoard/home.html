@@ -1,0 +1,29 @@
+{% extends 'dashBoard/base.html' %}
+<!DOCTYPE html>
+{% block title %}
+home
+{% endblock %}
+{% block content %}
+    <h1>dashBoard</h1>
+    {% for TaskListAndTasck in TaskListAndTascks %}
+        <h2>{{TaskListAndTasck.taskList.title}}</h2>
+        <table>
+        <tr>
+        <th>title</th>
+        <th>startDate</th>
+        <th>endDate</th>
+        <th>status</th>
+        </tr>
+        {% for task in TaskListAndTasck.tasks %}
+            <tr>
+                <td><a href="{% url 'task' task.id %}">{{task.title}}</a></td>
+                <td>{{task.startDate}}</td>
+                <td>{{task.endDate}}</td>
+                <td>{{task.status}}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    {% endfor %}
+
+
+{% endblock %}
